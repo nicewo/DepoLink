@@ -11,7 +11,7 @@ Su deposundaki seviye şamandırası ile uzaktaki pompa arasında kablo çekmede
 - **Bağlantı kopma koruması**: 3 sn paket gelmezse pompa otomatikte durur
 - **Termik koruma**: NC termik kontağı açılırsa pompa her modda durur, arıza rölesi çeker
 - **Manuel mod**: depodaki veya pompadaki butonla aç/kapat, 60 dk sonra otomatik kapanır
-- Durum LED'leri her iki istasyonda (motor çalışıyor / termik / depo talebi)
+- Durum LED'leri: depo tarafında pompa ve termik durumu (ACK'tan), pompa tarafında röle ve depo talebi
 
 ## Donanım
 
@@ -20,7 +20,7 @@ Su deposundaki seviye şamandırası ile uzaktaki pompa arasında kablo çekmede
 | MCU | Arduino Uno | Arduino Uno |
 | Radyo | E22 (UART, 9600) | E22 (UART, 9600) |
 | Girişler | D2 seviye sensörü, D3 buton | D2 buton, D3 termik (NC) |
-| Çıkışlar | D6 yeşil LED (motor), D7 turuncu LED (termik) | D4 pompa rölesi, D5 arıza rölesi, D6/D7 LED |
+| Çıkışlar | D6 yeşil LED (pompa çalışıyor), D7 turuncu LED (termik sağlam) | D4 pompa rölesi, D5 arıza rölesi, D6 yeşil LED (pompa rölesi), D7 turuncu LED (depo su istiyor) |
 | LoRa | D10 ← E22 TXD, D11 → E22 RXD | D10 ← E22 TXD, D11 → E22 RXD |
 
 Röle modülleri **aktif LOW** kabul edilmiştir. Girişler `INPUT_PULLUP`.
